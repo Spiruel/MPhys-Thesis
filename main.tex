@@ -1,0 +1,113 @@
+\documentclass[12pt]{book}
+
+
+\usepackage{a4wide}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage[UKenglish]{babel}% http://ctan.org/pkg/babel
+\usepackage[UKenglish]{isodate}% http://ctan.org/pkg/isodate
+\usepackage{lipsum}
+\usepackage[top=1.5in,bottom=1in,right=1in,left=1in,head=1.5in]{geometry}
+
+\usepackage[bookmarks,colorlinks=true]{hyperref}
+\hypersetup{colorlinks,breaklinks=True,
+            linkcolor=black,
+            filecolor=black,
+            citecolor=blue,
+            urlcolor=red}
+            
+\usepackage[authoryear, round, sort]{natbib}
+\usepackage{aas_macros}
+\let\cite\citep
+
+\pagestyle{fancyplain}
+\renewcommand{\chaptermark}[1]%
+         {\markboth{\thechapter.\ #1}{}}
+\renewcommand{\sectionmark}[1]%
+         {\markright{\thesection\ #1}}
+\lhead[\fancyplain{}{\bfseries\thepage}]%
+    {\fancyplain{}{\bfseries\rightmark}}
+\rhead[\fancyplain{}{\bfseries\leftmark}]%
+    {\fancyplain{}{\bfseries\thepage}}
+\cfoot{}
+
+\usepackage{titlesec}
+
+\titleformat{\chapter}[display]
+    {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{0pt}{20pt}
+
+\makeatother
+
+\begin{document}
+
+{\let\cleardoublepage\clearpage 
+
+\titlepage
+
+  %\frontmatter
+
+{
+  \thispagestyle{empty}
+  \vspace*{\stretch{1}}
+  {\parindent0cm
+   \rule{\linewidth}{.7ex}}
+  \begin{flushright}
+
+    \vspace*{\stretch{1}}
+    \sffamily\bfseries\Huge
+    Doomsday: Cometary Remnant Impacts\\and their Mitigation\\
+    \vspace*{\stretch{1}}
+    \sffamily\bfseries\large
+    Samuel Bancroft
+    \vspace*{\stretch{1}}
+  \end{flushright}
+  \rule{\linewidth}{.7ex}
+  
+\vspace{3ex}
+\small{
+\begin{center}%
+  {\bfseries \vspace{-.5em}{Abstract}}%
+\end{center}%
+\vspace{-3ex}
+\noindent \quotation{\lipsum[100]}
+}
+
+  \vspace*{\stretch{5}}
+  \begin{center}
+    \includegraphics[width=2in]{DU_2-col_sml.pdf}
+  \end{center}
+  \vspace*{\stretch{1}}
+  \begin{center}\sffamily\LARGE{\today}\end{center}
+
+  \thispagestyle{empty}
+
+  \vspace*{\stretch{3}}
+  \begin{center}
+  \large \emph{Supervisor: Dr Richard Wilman}\\
+  \vspace{5ex}
+  \emph{Submitted in partial satisfaction of the requirements for the degree
+F301 ``Physics (4 Years)'' at Durham University}
+  \end{center}
+}
+
+\endtitlepage
+
+  \tableofcontents
+  %\listoffigures
+  %\listoftables
+
+  \mainmatter\setcounter{page}{1}
+  \include{intro}
+  \include{method}
+
+
+  \backmatter
+  \include{bibliography}
+  \markboth{}{}
+
+
+  \include{acknowledgements}
+} %from \let\cleardoublepage\clearpage 
+
+\end{document}
