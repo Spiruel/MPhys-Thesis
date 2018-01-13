@@ -7,16 +7,15 @@
 \usepackage[UKenglish]{babel}% http://ctan.org/pkg/babel
 \usepackage[UKenglish]{isodate}% http://ctan.org/pkg/isodate
 \usepackage{lipsum}
+\usepackage{amsmath}
 \usepackage[top=1.5in,bottom=1in,right=1in,left=1in,head=1.5in]{geometry}
 
-\usepackage[bookmarks,colorlinks=true]{hyperref}
-\hypersetup{colorlinks,breaklinks=True,
-            linkcolor=black,
-            filecolor=black,
-            citecolor=blue,
-            urlcolor=red}
+\usepackage[breaklinks,colorlinks,
+   urlcolor=blue,citecolor=blue,linkcolor=black]{hyperref}
             
 \usepackage[authoryear, round, sort]{natbib}
+\setlength{\bibsep}{.75ex plus 0ex} %bibliography linespacing
+
 \usepackage{aas_macros}
 \let\cite\citep
 
@@ -33,8 +32,8 @@
 
 \usepackage{titlesec}
 
-\titleformat{\chapter}[display]
-    {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titleformat{\chapter}[hang]
+    {\normalfont\huge\bfseries}{\thechapter}{20pt}{\Huge}
 \titlespacing*{\chapter}{0pt}{0pt}{20pt}
 
 \makeatother
@@ -107,7 +106,8 @@ F301 ``Physics (4 Years)'' at Durham University}
   \markboth{}{}
 
 
-  \include{acknowledgements}
+%UNCOMMENT TO ALLOW ACKNOWLEDGEMENTS
+ % \include{acknowledgements}
 } %from \let\cleardoublepage\clearpage 
 
 \end{document}
