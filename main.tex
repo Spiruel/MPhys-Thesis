@@ -1,41 +1,85 @@
 \documentclass[12pt]{book}
 
-
 \usepackage{a4wide}
+\usepackage{lastpage}
 \usepackage{fancyhdr}
 \usepackage{graphicx}
+%\usepackage{pgfplots}
+\graphicspath{{figures/}}
+
+%\usepackage[skip=0pt]{caption}
+\setlength{\abovecaptionskip}{-1ex}
+\setlength{\belowcaptionskip}{-3ex}
+
 \usepackage[UKenglish]{babel}% http://ctan.org/pkg/babel
 \usepackage[UKenglish]{isodate}% http://ctan.org/pkg/isodate
 \usepackage{lipsum}
 \usepackage{amsmath}
-\usepackage[top=1.5in,bottom=1in,right=1in,left=1in,head=1.5in]{geometry}
+\usepackage{mathabx}
+\usepackage[top=1in,bottom=1in,right=1in,left=1in,head=1in]{geometry}
+
+\usepackage{multirow}
+\usepackage{longtable}
+%\usepackage[table,xcdraw]{xcolor}
+\usepackage{booktabs}
+\usepackage{rotating}
 
 \usepackage[breaklinks,colorlinks,
-   urlcolor=blue,citecolor=blue,linkcolor=black]{hyperref}
+   urlcolor=black,citecolor=black,linkcolor=black]{hyperref}
+   
+%\usepackage{xcolor}
+%\definecolor{xlinkcolor}{cmyk}{1,1,0,0} % FOR BLUE CITE LINKS
+%\hypersetup{citecolor=xlinkcolor}
             
 \usepackage[authoryear, round, sort]{natbib}
-\setlength{\bibsep}{.75ex plus 0ex} %bibliography linespacing
+\setlength{\bibsep}{.25ex plus 0ex} %bibliography linespacing
+
+
+\usepackage{amsmath}
+\usepackage{xstring}
+\usepackage{tocloft}
+\usepackage{blindtext}
 
 \usepackage{aas_macros}
-\let\cite\citep
+%\let\cite\citep
 
 \pagestyle{fancyplain}
-\renewcommand{\chaptermark}[1]%
-         {\markboth{\thechapter.\ #1}{}}
-\renewcommand{\sectionmark}[1]%
-         {\markright{\thesection\ #1}}
-\lhead[\fancyplain{}{\bfseries\thepage}]%
-    {\fancyplain{}{\bfseries\rightmark}}
-\rhead[\fancyplain{}{\bfseries\leftmark}]%
-    {\fancyplain{}{\bfseries\thepage}}
+\fancyhf{}
+\rfoot{\thepage}
+
+%\renewcommand{\chaptermark}[1]%
+%         {\markboth{\thechapter.\ #1}{}}
+%\renewcommand{\sectionmark}[1]%
+%         {\markright{\thesection\ #1}}
+%\lhead[\fancyplain{}{\bfseries\thepage}]%
+%    {\fancyplain{}{\bfseries\rightmark}}
+%\rhead[\fancyplain{}{\bfseries\leftmark}]%
+%    {\fancyplain{}{\bfseries\thepage}}
 \cfoot{}
 
 \usepackage{titlesec}
+\titlespacing\section{0pt}{4pt plus 4pt minus 2pt}{4pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{4pt plus 4pt minus 2pt}{4pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{4pt plus 4pt minus 2pt}{4pt plus 2pt minus 2pt}
 
 \titleformat{\chapter}[hang]
     {\normalfont\huge\bfseries}{\thechapter}{20pt}{\Huge}
 \titlespacing*{\chapter}{0pt}{0pt}{20pt}
 
+\makeatletter
+\providecommand\phantomsection{}% for hyperref
+
+\newcommand\listofillustrations{%
+    \chapter*{List of Tables \& Figures}%
+    \phantomsection
+    \section*{Figures}%
+    \phantomsection
+    \@starttoc{lof}%
+    \bigskip
+    \section*{Tables}%
+    \phantomsection
+    \@starttoc{lot}}
+    
 \makeatother
 
 \begin{document}
@@ -69,7 +113,7 @@
   {\bfseries \vspace{-.5em}{Abstract}}%
 \end{center}%
 \vspace{-3ex}
-\noindent \quotation{\lipsum[100]}
+\noindent \quotation{Context, Aims, Methods, Results, Conclusion \lipsum[100]}
 }
 
   \vspace*{\stretch{5}}
@@ -92,18 +136,26 @@ F301 ``Physics (4 Years)'' at Durham University}
 
 \endtitlepage
 
+  \pagenumbering{gobble} %turn off page numbers until intro
+
   \tableofcontents
+  \listofillustrations
   %\listoffigures
   %\listoftables
-
+   
   \mainmatter\setcounter{page}{1}
+  %\widowpenalties 1 10000 %penalty of 10000 (no break) between all lines in every para, prohibiting mid-paragraph page breaks
+  \raggedbottom
   \include{intro}
   \include{method}
-
+  \include{results}
+  \include{conclusion}
 
   \backmatter
   \include{bibliography}
   \markboth{}{}
+  
+  \include{appendix}
 
 
 %UNCOMMENT TO ALLOW ACKNOWLEDGEMENTS
