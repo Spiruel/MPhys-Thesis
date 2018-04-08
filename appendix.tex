@@ -1,7 +1,30 @@
-\begin{appendix}
+\appendix
+
+\renewcommand{\thefigure}{A.\arabic{figure}}
+\setcounter{figure}{0}
+\renewcommand{\thetable}{A.\arabic{table}}
+\setcounter{table}{0}
+
 \chapter{Appendix}
+\section*{}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics{losscone.png}
+    \caption[Earth's loss cone]{Semi-major axes vs eccentricities of observed asteroids (blue), comets (red) and potentially hazardous asteroids (yellow). Data sourced from the IAU MPC. Meteorites with pre-impact orbits determined by \cite{doi:10.1093/mnras/stv378} are plotted as green circles. The Earth aphelion and perihelion are plotted as dashed lines.}
+    \label{fig:loss_cone}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics{figures/error.pdf}
+    \caption[Simulation error]{Relative energy error over time. Black line shows the moving average of all the simulation runs.}
+    \label{fig:loss_cone}
+\end{figure}
+
+
 \begin{sidewaystable}
-\caption[Initial conditions]{Initial conditions of the solar system as of 01-01-2018 12:00 UTC. Data sourced from NASA JPL Horizons database.}\vspace{3ex}
+\caption[Initial conditions]{Initial conditions of the solar system as of 01-12-2017 12:00 UTC. Data sourced from NASA JPL Horizons database.}\vspace{3ex}
 \label{table:init_con}
 \begin{tabular}{llllllll} \toprule \toprule
 \multicolumn{1}{c}{Object} & \multicolumn{1}{c}{Mass / $M_{\odot}$} & \multicolumn{1}{c}{$x$ / AU} & \multicolumn{1}{c}{$y$ / AU} & \multicolumn{1}{c}{$z$ / AU} & \multicolumn{1}{c}{$v_x$ / AU$\;$yr$^{-1}$}& \multicolumn{1}{c}{$v_y$  / AU$\;$yr$^{-1}$}& \multicolumn{1}{c}{$v_z$  / AU$\;$yr$^{-1}$}\\ \midrule
@@ -17,5 +40,3 @@ Neptune & 5.151E-05 & 2.865E+01 & -8.684E+00 & -4.815E-01 & 3.249E-01 & 1.104E+0
 \bottomrule
 \end{tabular}
 \end{sidewaystable}
-
-\end{appendix}

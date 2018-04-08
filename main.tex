@@ -1,7 +1,7 @@
 \documentclass[12pt]{book}
 
 \usepackage{a4wide}
-\usepackage{lastpage}
+%\usepackage{lastpage}
 \usepackage{fancyhdr}
 \usepackage{graphicx}
 %\usepackage{pgfplots}
@@ -23,6 +23,8 @@
 %\usepackage[table,xcdraw]{xcolor}
 \usepackage{booktabs}
 \usepackage{rotating}
+
+\usepackage{subcaption}
 
 \usepackage[breaklinks,colorlinks,
    urlcolor=black,citecolor=black,linkcolor=black]{hyperref}
@@ -67,6 +69,7 @@
 \titlespacing*{\chapter}{0pt}{0pt}{20pt}
 
 \makeatletter
+
 \providecommand\phantomsection{}% for hyperref
 
 \newcommand\listofillustrations{%
@@ -79,7 +82,7 @@
     \section*{Tables}%
     \phantomsection
     \@starttoc{lot}}
-    
+
 \makeatother
 
 \begin{document}
@@ -113,7 +116,7 @@
   {\bfseries \vspace{-.5em}{Abstract}}%
 \end{center}%
 \vspace{-3ex}
-\noindent \quotation{Context, Aims, Methods, Results, Conclusion \lipsum[100]}
+\noindent \quotation{Context, Aims, Methods, Results, Conclusion Comets make up a small but important fraction of near-Earth objects. It is likely comets provide the largest and most energetic impactors on the Earth and can be responsible for planet-sterilising events. In order to investigate the comet threat to Earth, large scale N-body simulations are performed in order to examine the various dynamical pathways for a cometary population to migrate onto Earth-crossing orbits. We also simulate the observations of exceptional incoming comet impactors to Earth in order to generate discovery time estimates. A decision tree model is presented as an effective warning tool to identify significant cometary influx in the inner Solar System environment that is heading towards Earth. We conclude with an assessment for current planetary defence efforts. COMPLETELY REDO ABSTRACT}
 }
 
   \vspace*{\stretch{5}}
@@ -149,6 +152,7 @@ F301 ``Physics (4 Years)'' at Durham University}
   \include{intro}
   \include{method}
   \include{results}
+  \include{mitigation}
   \include{conclusion}
 
   \backmatter
