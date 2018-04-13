@@ -1,11 +1,12 @@
 \chapter{Simulation Results \& Discussion}
 \label{chap:results}
 
-We perform a large simulation that considers the scattering of small bodies through the Solar System and produce a population of comets that impact Earth. From this we hope to understand how comets, in particular those from the Oort cloud, are injected into the planetary region and onto Earth-crossing orbits. By analysing a range of orbital behaviours exhibited by these comets, we hope to discover interesting and potentially exploitable behaviour in the sky-plane distribution in the months leading up to a comet impact with our planet.
+We performed a large simulation that considered the scattering of small bodies through the Solar System and produced a population of comets that impact Earth. From this we hope to understand how comets, in particular those from the Oort cloud, are injected into the planetary region and onto Earth-crossing orbits. By analysing a range of orbital behaviours exhibited by these comets, we aimed to discover interesting and potentially exploitable behaviour in the sky-plane distribution in the months leading up to a comet impact with our planet.
 
-Throughout this analysis we describe `particles' in simulation, with the direction of time going backwards from the point of Earth impact at $t=0$ Myr. Where there is reference of comets, the direction of time is reversed, from a comet's early dynamical lifetime towards an impending Earth impact.
+Throughout this analysis we describe `particles' in the simulation, with the direction of time going backwards from the point of Earth impact at $t=0$ Myr. Where we make a reference to `comets', the direction of time is reversed from a comet's early dynamical lifetime towards an impending Earth impact.
 
 \section{Migration from Earth-crossing orbits}
+\label{sec:migration}
 
 Reflective of the extreme velocities of LPCs, the majority of particles in the simulation ($\sim60$\%) were immediately ejected onto hyperbolic orbits, and managed to leave the Solar System without becoming captured due to any planetary perturbations. As detailed in \S~\ref{method:evol}, our primary focus in this analysis concerns dynamically evolved comets and their migration through the Solar System.
 
@@ -30,13 +31,14 @@ If one assumes that a LPC has an equal probability to become gravitationally sca
 \begin{figure}[t!]
     \centering
     \includegraphics{ae_migration.pdf}
-    \caption[Particle Migration]{Gravitationally bound particles in the simulation at various snapshots in time. The boundaries of the Earth's loss cone are marked with dashed lines. The first 8 planets of the Solar System are plotted as black crosses.}
+    \caption[Particle migration from the Earth-Moon system]{Gravitationally bound particles in the simulation at various snapshots in time. The boundaries of the Earth's loss cone are marked with dashed lines. The first 8 planets of the Solar System are plotted as black crosses.}
     \label{fig:migration}
 \end{figure}
 
 \section{Dynamical lifetimes}
 
 \subsection{Exiting the Solar System}
+\label{sec:exiting}
 
 For each cometary particle in the simulation we calculated the dynamical lifetimes by determining the length of time taken for gravitational perturbations to render the particle's orbit unbound. The median dynamical lifetime was found to be $4.1\times10^5$ yrs. This is of the same order of magnitude as $6\times10^5$ yrs for LPCs reported by \cite{1979IAUS...81..277W}, with a smaller value perhaps indicative of the reduced likelihood for LPCs to reach further into the Solar System and encounter Earth.
 
@@ -99,7 +101,7 @@ The populations with $q < 1.3$ AU of the HFCs and JFCs in the simulation remaine
 
 \begin{table}[t!]
 \centering
-\caption[Particles classes and their mean dynamical lifetimes]{Classifications of test particles in the simulation and the average \% of the particle's dynamical lifetime spent in that class. Classifications into either a Jupiter Family Comet (JFC), Halley Family Comet (HFC), Centaur, Trans-Neptunian Object (TNO) or Encke-type comet. Class definitions based on the Jovian Tisserand parameter $T_J$, orbital period $P$, perihelion $q$, and semi-major axis $a$.}\vspace{1.5ex}
+\caption[Particle classes and their mean dynamical lifetimes]{Classifications of test particles in the simulation and the average \% of the particle's dynamical lifetime spent in that class. Classifications into either a Jupiter Family Comet (JFC), Halley Family Comet (HFC), Centaur, Trans-Neptunian Object (TNO) or Encke-type comet. Class definitions based on the Jovian Tisserand parameter $T_J$, orbital period $P$, perihelion $q$, and semi-major axis $a$.}\vspace{1.5ex}
 \label{table:class}
 \begin{tabular}{ccc} \toprule \toprule
 Taxonomic Class & Classification                                      & Mean \% dynamical time \\ \midrule
@@ -136,7 +138,7 @@ Of the taxonomical classes in Table.~\ref{table:class}, the Encke-type comets ma
 
 Of all the Encke-type comets investigated in the simulation, the second most likely dynamical class for such objects to be in during their lifetimes was found to be the HFC class. This reveals the presence of a purely gravitational dynamical pathway (produced by the terrestrial planets) for LPCs to rapidly evolve into Encke-type classes. This is of particular significance, as it suggests that a large population of dormant comet nuclei may exist in NEO populations, masquerading as asteroids and therefore impacting our understanding  of  the  relative  importance  of  asteroids  compared to comets as part of the impact hazard.
 
-The majority of these comets' lifetimes were found to be spent in this Encke-type class, with a median dynamical lifetime of 7.89 Myr. This suggests that like the asteroids which such comets cohabit regions of the Solar System with, the small body populations are unlikely to fluctuate wildly on short-term, human timescales due to the introduction of a comet shower. Additionally, the dynamical lifetimes far exceed the expected estimated amount of time required for a comet to physically age, and become dormant or fragment. This suggests that redoing the simulation with realistic modelling of the physical aging of comets would apply additional constraints on these Encke-type comets -  and allow only anomalously large and long-lived comets to persist into such orbits. Alternatively, it could also mean that a population of multi-kilometre, long-lived and extreme low albedo comets could exist in the NEO environment, unbeknownst to current Earth object surveys.
+The majority of these comets' lifetimes were found to be spent in this Encke-type class, with a median dynamical lifetime of 6.33 Myr. This suggests that like the asteroids which such comets cohabit regions of the Solar System with, the small body populations are unlikely to fluctuate wildly on short-term, human timescales due to the introduction of a comet shower. Additionally, the dynamical lifetimes far exceed the expected estimated amount of time required for a comet to physically age, and become dormant or fragment. This suggests that redoing the simulation with realistic modelling of the physical aging of comets would apply additional constraints on these Encke-type comets -  and allow only anomalously large and long-lived comets to persist into such orbits. Alternatively, it could also mean that a population of multi-kilometre, long-lived and extreme low albedo comets could exist in the NEO environment, unbeknownst to current Earth object surveys.
 
 %encke Type comet impacts
 %comet fading to dormant JFCs
@@ -172,42 +174,62 @@ The larger the value of $a$, the less of a perturbation comets encounter from th
 \section{Loss Cone Dynamics}
 \label{sec:loss_cone}
 
-\begin{figure}[t!]
-    \centering
-    \includegraphics{figures/exotic_ratio.pdf}
-    \caption[]{}
-    \label{fig:exotic}
-\end{figure}
+Comets falling inwards from the Oort Cloud will have orbits in random orientations, where all directions of approach are possible. Comets falling very close the solar direction are likely to get disintegrated by the Sun, or alternatively may swing by one of the planets and become ejected out of the Solar System due to a close encounter. In either case, these particular comets are lost from the Solar System. Consequently, there is an region of energy-angular momentum space around the solar direction that is expected to be particularly devoid of LPCs. Oort Cloud comets are expected to be swept clear of this phase space on time scales similar to a comet's orbital period. This is known as the Sun's loss cone, and was shown by \cite{1981AJ.....86.1730H} to be effective in shielding the Earth from showers of comets.
 
-A population of comets falling inwards from the Oort Cloud will have randomly oriented orbits where all approach directions are possible. Comets falling very close the solar direction are likely to get boiled away and disintegrated by the Sun, or alternatively may swing by one of the planets and pick up enough extra speed from the encounter to carry it right out of the solar system. In either case, these particular comets are lost from the Solar System. Consequently, there is an region of energy-angular momentum space around the solar direction that is expected to be particularly devoid of LPCs. This is known as the Sun's loss cone, and was shown by \cite{1981AJ.....86.1730H} to be effective in shielding the Earth from showers of comets.
+This loss cone concept is similar to considerations of the distribution of stars around a massive black hole in the centre of a globular cluster (see \cite{1978ApJ...226.1087C} and references therein), and gets its name by analogy with the similar description of the phase space of a plasma in a mirror machine \citep{baldwin1972plasma}. 
 
-This loss cone concept is similar to considerations of stars or stellar remnants accreting into black holes \citep{0264-9381-30-24-244005}. The formulation of a loss cone can be extended to other bodies of the Solar System, and is described as a set of orbits of sufficiently low angular momenta such that they intersect a certain body, or pass within some distance of its centre. %The critical angular momentum $J_{lc}$ of a loss cone for a periapsis of the central body $q$ is,
+The formulation of a loss cone can be extended to other bodies of the Solar System, and is described as a set of orbits of sufficiently low angular momenta such that they intersect a certain body, or pass within some distance of its centre. The critical angular momentum $J_{lc}$ of a loss cone for a central body is,
 
-%\begin{equation}
-%    J_{lc}^2 = GM_\odot q(1+e)~.
-%\end{equation}
+\begin{equation}
+    J_{lc}(E) = \sqrt{ 2 {r_{lc}}^2 \left(E - \Phi(r_{lc})\right) }~,
+    \label{eq:loss_cone}
+\end{equation}
 
-%Comets with $J < J_{lc}$ fall within the loss cone and are assumed to become removed over some timescale corresponding to the loss cone's central body.
+Where $\Phi$ is the gravitational potential relative to the central body. The radius of the loss cone $r_{lc}$ is taken to the be larger of the tidal disruption radius, or radius of capture of the central body. Comets with $J < J_{*}$ fall within the loss cone and are assumed to become removed over some timescale corresponding to the loss cone's central body. 
 
-External perturbations on the Oort Cloud, eg. passing stars, can significantly change the angular momenta of comets and send them into the Sun's loss cone. The Jupiter-Saturn barrier (detailed in \S~\ref{js-barrier}) is unable to provide sufficient orbital angular momenta to such comets for them to leave the loss cone. A loss cone comet can only leave the region by two means; through either hyperbolic ejection, or the destruction of the comet due to breakup near the Sun or a planetary impact. This means that if there is the occurrence of an exceptionally strong shower of Oort Cloud comets, such an event can manifest itself as a rapid filling of the Sun's loss cone, and can therefore be a method of identifying an impending LPC threat to Earth.
+While now referred to as a `cone' in energy-angular momentum space, the term `loss cylinder' has been used in previous literature when considering highly eccentric orbits such that $e \approx 1$. From Eq.~\eqref{eq:loss_cone}, $J_* = \sqrt{2GMq}$ when $E \ll GM/r_{lc}$, which implies that the loss cone region can be defined by a fixed $q$ if $e \approx 1$ and is subsequently constrained into a cylindrical region in velocity space. %tangential %at any fixed orbital angular momentum J = m|r \times v| = rv_t where r is heliocentric distance 
 
-In this investigation, we simulate a huge number of comets reaching Earth within an 11.8 year period. Comets capable of an impact with Earth have heliocentric loss cone orbits - which means that the simulation is in effect - an unrealistically very extreme example of a comet shower filling the Sun's loss cone. In addition, we are not concerned in retracing these comets back to an Oort Cloud environment (for reasons detailed in \S~\ref{sec:accuracy}). For these reasons, we neglect analysis of the filling of the Sun's loss cone and focus on smaller regions of angular-momenta space within it, namely the Earth's and other planet's loss cones.
+External perturbations on the Oort Cloud, eg. passing stars, are able to significantly change the angular momenta of comets and send them into the Sun's loss cone \citep{1950BAN....11...91O}. Other perturbers such as the Jupiter-Saturn barrier (detailed in \S~\ref{js-barrier}) are unable to provide sufficient orbital angular momenta to such comets for them to leave the loss cone. A comet in the Sun's loss cone can only leave the region by two means; through either ejection, or the destruction of the comet due to breakup near the Sun or a planetary impact. Ejection from the Sun's loss cone leads to hyperbolic ejection from the Solar System. 
+
+The rapid filling of the Sun's loss cone would represent an instantaneous influx of comets much greater than the steady-state value - evidence of an exceptionally strong, close external perturber that can therefore be used as a method of identifying a comet shower threat to Earth.
+
+In this investigation, we simulate a huge number of comets reaching Earth within an 11.8 year period. Comets capable of an impact with Earth have heliocentric loss cone orbits - which means that the simulation is in effect - an very extreme example of a comet shower filling the Sun's loss cone. In addition, we are not concerned in retracing these comets back to an Oort Cloud environment (for reasons detailed in \S~\ref{sec:accuracy}). For these reasons, we neglect analysis of the filling of the Sun's loss cone and focus on smaller regions of angular-momenta space within it, namely the Earth's loss cone.
 %spend time considering earth loss cone for this sim - we cant really do sun loss cone as we're doing a comet shower anyway
 %reference mpc data and talk about how phas are almost all in loss cone of earth
 
-Fig.~\ref{fig:exotic}
+%As the particles are evolved backwards in time towards dynamically newer states, one would expect the long-lived particles to increasingly adopt the orbital characteristics of LPCs and become uniformly distributed in $e^2$. Therefore one can expect only a small fraction 1-e^
 
-\section{Worst-case scenarios}
+%$J$ can be related to to apoapsis $Q$ and periapsis $q$ of a body with,
+%
+%\begin{equation}
+%    J = \sqrt{GMa(1-e^2)} = \sqrt{GMa(1+e)(1-e)} = \sqrt{GMQ(1-e)} = \sqrt{GMq(1+e)}~.
+%\end{equation}
+%http://homepage.physics.uiowa.edu/~spangler/2961_12/Lec09_notes.pdf
+
+We examined the bound particles in the Earth's loss cone as a ratio of the total number of bound particles. The boundaries of the Earth's loss cone were taken to be the Earth's aphelion and perihelion, given by $r_{ap} = (1+e)a$ and $r_{per} = (1-e)a$ respectively.
+
+Of the objects labelled as potentially hazardous asteroids (PHAs) by the IAU MPC, 95\% were found to lie within Earth's loss cone defined by the boundaries given above. Additionally, all the reconstructed pre-impact orbits of meteorites sourced from \cite{doi:10.1093/mnras/stv378} were found to be loss-cone orbits. This indicates that while objects in the Earth's loss cone do not necessarily impact within one orbital period, such objects should be deemed as hazardous. For this reason, we are interested in how particles in the simulation evolved from loss cone orbits and the timescales involved for comets residing the loss cone to subsequently impact with the Earth.
 
 \begin{figure}[t!]
     \centering
-    \includegraphics{radiants.pdf}
-    \caption[Distribution of apparent radiants]{Distribution of apparent radiants. Geocentric equatorial coordinates plotted for various comet threats. Green line and boundaries represent the plane of the ecliptic $\pm5^\degree$, black line and boundaries represent the galactic plane $\pm10^\degree$. The galactic centre is plotted as black circle. A 2D kernel density estimate is shown.}
-    \label{fig:loss_cone}
+    \includegraphics{figures/exotic_ratio.pdf}
+    \caption[Bound particles in the Earth's loss cone]{Temporal evolution of gravitationally bound comets with loss cone orbits as a ratio of the total number of bound particles in the simulation. A purple dashed line marks a linear fit to $N_{haz}/N_{tot}$ beyond 4 Myr.}
+    \label{fig:exotic}
 \end{figure}
 
-% "In principle," he adds, "one would expect those positions to be evenly distributed in the sky, particularly if these objects come from the Oort cloud. However, what we find is very different-a statistically significant accumulation of radiants. The pronounced over-density appears projected in the direction of the constellation of Gemini, which fits the close encounter with Scholz's star.
+At the beginning of the simulation all particles were located on the surface of the Earth-Moon system - which has similar angular momentum and energy to that of Earth's. This therefore placed all the particles within Earth's loss cone at $t=0$ Myr. 
 
+Fig.~\ref{fig:exotic} shows that the number of comets with loss cone orbits $N_{haz}$ as a ratio of the total number of simulated comets that were initially bound to the Solar System $N_{tot}$. The unbound particles were ignored even though they continued to reside in Earth loss cone. This is because they were deemed to quickly attain heliocentric distances far greater than observational limits could reach.
+
+$N_{haz}/N_{tot}$ rapidly decreased from 1 and decayed exponentially for the first 4 Myr, with the majority of bound particles depopulating the loss cone within the first 0.5 Myr. The huge outflow of bound particles out of the loss cone in the early stages of the simulation was due to the immediate interactions of the planets and the Sun with the rapidly evolving comets, causing particles to quick migrate across the loss cone boundaries. This left a much more slowly evolving population of particles ($\sim$20\% of the total number of bound particles) to evolve more gradually.
+
+Beyond the first 4 Myr $N_{haz}/N_{tot}$ then decreased linearly, reflecting a long-lasting population of comets with dynamical lifetimes far exceeding their physical lifetimes, discussed in \S~\ref{sec:migration}. While most comets entered Earth's loss cone only once before impact, this long-lasting population migrated across the loss cone boundary multiple times. The average number of returns to the loss cone for these particular comets (excluding comets who never made a return to the loss cone) was 22.
+
+Aware of a skewed distribution of comet lifetimes within the loss cone, we then calculated the median average time a particle remained in the loss cone. The median average time taken for a particle to reside in the loss cone before leaving it for the first time was found to be 0.02 Myr, and the average median time taken before leaving the loss cone for the last time was 0.20 Myr. This represented roughly 4\% and 50\% of a comet's expected dynamical lifetime in the simulation respectively.
+
+We found, as expected, that the majority of comets migrated into the loss cone with decreases to their semi-major axis as opposed to migration from the inner planets. Around 30\% of comets migrating in this fashion evolved through Mars' loss cone immediately prior to Earth's, spending little time in other planetary loss cones. Comet's more typical of a JFC, and therefore more strongly coupled to Jupiter, spent most of their physical lifetimes in Jupiter's loss cone before making a rapid descent in $a$ to reach Earth. Particles evolving from the inner planets into the loss cone tended to adopt orbits within Venus' loss cone, holding stable orbits with small heliocentric distances for unrealistic periods of time permitted by physical processes.
+
+It is concluded that the majority of impactors with cometary dynamical properties rapidly migrate into Earth's loss cone and spend little of their dynamical lifetimes there before hitting the Earth. This is unlike impactors with more asteroidal dynamical qualities, which evolve more slowly and would be expected to make multiple returns to the loss cone. Therefore, tracing the influx of small bodies through various planetary loss cones, notably Mars', Venus' and Jupiter's, could be a useful diagnostic in identifying hazardous material. Identifying rapidly evolving cometary material in these areas of phase space could provide the signature clues of a population of undiscovered cometary remnants with behaviours similar to those that pose a serious threat to Earth.
 
 %prograde vs retrograde plot
 %https://onlinelibrary.wiley.com/doi/pdf/10.1111/maps.12080 make fig5

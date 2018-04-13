@@ -11,7 +11,7 @@
 \begin{figure}[h!]
     \centering
     \includegraphics{losscone.png}
-    \caption[Earth's loss cone]{Semi-major axes vs eccentricities of observed asteroids (blue), comets (red) and potentially hazardous asteroids (yellow). Data sourced from the IAU MPC. Meteorites with pre-impact orbits determined by \cite{doi:10.1093/mnras/stv378} are plotted as green circles. The Earth aphelion and perihelion are plotted as dashed lines.}
+    \caption[Catalogued asteroids and comets in Earth's loss cone]{Semi-major axes vs eccentricities of observed asteroids (blue), comets (red) and potentially hazardous asteroids (yellow). Data sourced from the IAU MPC. Meteorites with pre-impact orbits determined by \cite{doi:10.1093/mnras/stv378} are plotted as green circles. The Earth aphelion and perihelion are plotted as dashed lines.}
     \label{fig:loss_cone}
 \end{figure}
 
@@ -19,7 +19,31 @@
     \centering
     \includegraphics{figures/error.pdf}
     \caption[Simulation error]{Relative energy error over time. Black line shows the moving average of all the simulation runs.}
-    \label{fig:loss_cone}
+    \label{fig:error}
+\end{figure}
+
+%\section{Worst-case scenarios}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics{radiants.pdf}
+    \caption[Distribution of apparent radiants]{Distribution of apparent radiants for comets at the point of impact. Geocentric equatorial coordinates (J200) plotted for various comet threats. Green line and boundaries represent the plane of the ecliptic $\pm5^\degree$, black line and boundaries represent the galactic plane $\pm10^\degree$. The galactic centre is plotted as black circle. A 2D kernel density estimate is shown.}
+    \label{fig:radiants}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{tree1.pdf}
+    \vspace{.5ex}
+    \caption[Example decision tree]{Example decision tree used in the random forest, expanded for the first few layers. Samples represent the percentage of training datapoints associated with a particular node. Node fill colour denotes the majority class for classification.}
+    \label{fig:tree}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{gini.pdf}
+    \caption[Relative importance of orbital characteristics in learning algorithm]{Relative importance of each feature used for classification in the random forest learning algorithm. Gini importance calculated by examining the total reduction of $I_G$ due to a particular feature across all our decision trees.}
+    \label{fig:gini}
 \end{figure}
 
 
@@ -40,3 +64,7 @@ Neptune & 5.151E-05 & 2.865E+01 & -8.684E+00 & -4.815E-01 & 3.249E-01 & 1.104E+0
 \bottomrule
 \end{tabular}
 \end{sidewaystable}
+
+\section*{Code}
+
+All the \texttt{Python} code used throughout the course of this investigation can be viewed online at \url{https://github.com/Spiruel/L4_Project}.
