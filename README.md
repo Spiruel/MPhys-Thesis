@@ -1,4 +1,5 @@
-# MPhys-Thesis# Doomsday: Cometary Remnant Impacts and their Mitigation
+# MPhys-Thesis
+# Doomsday: Cometary Remnant Impacts and their Mitigation
 
 Level 4 Project at Durham University, supervised by Dr. Richard Wilman.
 
